@@ -1,0 +1,23 @@
+# Copyrights (c) 2018 Jeremy Savonet
+
+dist: trusty
+
+sudo: required
+
+language:
+  - cpp
+
+compiler:
+  - clang
+  - gcc
+
+addons:
+  apt:
+    packages:
+      - cmake
+
+# Build steps
+script:
+  - cd ${TRAVIS_BUILD_DIR}
+  - mkdir build && cd build
+  - cmake ../ && make
